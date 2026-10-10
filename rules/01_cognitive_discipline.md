@@ -1,5 +1,7 @@
 # 🧠 01. Cognitive Discipline & Decision Frontiers
 
+**[English](01_cognitive_discipline.md)** | **[简体中文](01_cognitive_discipline.zh.md)**
+
 > *"The first 90% of the code accounts for the first 90% of the development time. The remaining 10% of the code accounts for the other 90% of the development time."* — Tom Cargill
 
 ---

@@ -1,5 +1,7 @@
 # 🏛️ 02. Architecture Patterns & Deep Modules
 
+**[English](02_architecture_and_deep_modules.md)** | **[简体中文](02_architecture_and_deep_modules.zh.md)**
+
 > *"Modules should be deep: the best modules provide powerful functionality yet have simple interfaces."* — John Ousterhout, *A Philosophy of Software Design*
 
 ---

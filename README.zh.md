@@ -29,14 +29,14 @@
 
 | 支柱规约 | 核心关注点 | 核心哲学 |
 | :--- | :--- | :--- |
-| **[00. 思想流派与致敬溯源](rules/00_attributions_and_origins.md)** | 溯源与工程传承 | 站在巨人的肩膀上：详尽标注所有核心工程思想的原始出处与灵感源泉。 |
-| **[01. 认知决策与行为铁律](rules/01_cognitive_discipline.md)** | 决策前沿与审慎推演 | 思考优于编码；计算决策前沿拓扑；单轮提问必带明确推荐；严禁静默决策。 |
-| **[02. 深模块设计与架构接缝](rules/02_architecture_and_deep_modules.md)** | 架构深度与隔离 | 极简接口、深邃实现；仓库严格保持无状态；彻底通过“删除测试（Deletion Test）”。 |
-| **[03. 受控技术语言与提示词](rules/03_controlled_language_and_prompts.md)** | 精准沟通与防漂移 | 严格遵循 ASD-STE100 规范；最大化 Prefix Cache 命中率；绝对防御性 AI。 |
-| **[04. 工业级 UI/UX 与信息架构](rules/04_ui_ux_information_architecture.md)** | 渐进式披露美学 | 极高数据密度；纯 CSS 交互黑魔法（零脚本依赖）；高管级首屏即决断。 |
-| **[05. 法医级调试与安全护栏](rules/05_forensic_debugging_and_guardrails.md)** | 反馈环与破坏性拦截 | 反馈环先行（无红灯测试绝不改代码）；凭据强制脱敏；拦截破坏性 Git 操作。 |
-| **[06. 研发治理与双轨审查](rules/06_governance_and_reviews.md)** | 单双向门与规范评审 | 单向门 vs 双向门评估；双轨代码审查（规范轴 vs 需求轴）；DAG 工单任务寻路。 |
-| **[07. 终极核对清单与十大红线](rules/07_master_checklist_and_redlines.md)** | 零容忍铁律 | 十大约束绝对红线，触犯任何一条直接阻断合入与发版。 |
+| **[00. 思想流派与致敬溯源](rules/00_attributions_and_origins.zh.md)** ([EN](rules/00_attributions_and_origins.md)) | 溯源与工程传承 | 站在巨人的肩膀上：详尽标注所有核心工程思想的原始出处与灵感源泉。 |
+| **[01. 认知决策与行为铁律](rules/01_cognitive_discipline.zh.md)** ([EN](rules/01_cognitive_discipline.md)) | 决策前沿与审慎推演 | 思考优于编码；计算决策前沿拓扑；单轮提问必带明确推荐；严禁静默决策。 |
+| **[02. 深模块设计与架构接缝](rules/02_architecture_and_deep_modules.zh.md)** ([EN](rules/02_architecture_and_deep_modules.md)) | 架构深度与隔离 | 极简接口、深邃实现；仓库严格保持无状态；彻底通过“删除测试（Deletion Test）”。 |
+| **[03. 受控技术语言与提示词](rules/03_controlled_language_and_prompts.zh.md)** ([EN](rules/03_controlled_language_and_prompts.md)) | 精准沟通与防漂移 | 严格遵循 ASD-STE100 规范；最大化 Prefix Cache 命中率；绝对防御性 AI。 |
+| **[04. 工业级 UI/UX 与信息架构](rules/04_ui_ux_information_architecture.zh.md)** ([EN](rules/04_ui_ux_information_architecture.md)) | 渐进式披露美学 | 极高数据密度；纯 CSS 交互黑魔法（零脚本依赖）；高管级首屏即决断。 |
+| **[05. 法医级调试与安全护栏](rules/05_forensic_debugging_and_guardrails.zh.md)** ([EN](rules/05_forensic_debugging_and_guardrails.md)) | 反馈环与破坏性拦截 | 反馈环先行（无红灯测试绝不改代码）；凭据强制脱敏；拦截破坏性 Git 操作。 |
+| **[06. 研发治理与双轨审查](rules/06_governance_and_reviews.zh.md)** ([EN](rules/06_governance_and_reviews.md)) | 单双向门与规范评审 | 单向门 vs 双向门评估；双轨代码审查（规范轴 vs 需求轴）；DAG 工单任务寻路。 |
+| **[07. 终极核对清单与十大红线](rules/07_master_checklist_and_redlines.zh.md)** ([EN](rules/07_master_checklist_and_redlines.md)) | 零容忍铁律 | 十大约束绝对红线，触犯任何一条直接阻断合入与发版。 |
 
 ---
 
@@ -64,7 +64,7 @@
 
 本仓库原生设计为支持各大 AI 编码助手的通用规范：
 
-### 1. Claude Code 与 Optimus
+### 1. Claude Code 与标准 Agent Skills 命令行
 * **官方 Agent Skill**: [SKILL.md](SKILL.md) 严格符合 Anthropic Agent Skill 标准规范。
   ```bash
   # 安装为全局技能（所有项目通用）：

@@ -1,5 +1,7 @@
 # 🎨 04. Industrial UI/UX & Information Architecture
 
+**[English](04_ui_ux_information_architecture.md)** | **[简体中文](04_ui_ux_information_architecture.zh.md)**
+
 > *"Simplicity is not the lack of clutter, that's a consequence of simplicity. Simplicity somehow essentially describes the purpose and place of an object and product."* — Jony Ive
 
 ---

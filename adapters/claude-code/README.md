@@ -1,11 +1,11 @@
-# Claude Code & Optimus Integration Guide
+# Claude Code & Agent Skills Integration Guide
 
-To enable the **Vibe Coding Playbook** in your Claude Code or Optimus workflow, choose one of the following approaches:
+To enable the **Vibe Coding Playbook** in your Claude Code or Agent Skills runtime, choose one of the following approaches:
 
 ---
 
 ## Method 1: Global Agent Skill (Recommended for all projects)
-Install the playbook as a globally available Agent Skill so that any Claude Code / Optimus session can load it automatically:
+Install the playbook as a globally available Agent Skill so that any Claude Code or Agent session can load it automatically:
 
 ```bash
 # 1. Create your user-level skills directory
@@ -15,7 +15,7 @@ mkdir -p ~/.agents/skills/vibe-coding-playbook
 cp /path/to/vibe-coding-playbook/SKILL.md ~/.agents/skills/vibe-coding-playbook/
 ```
 
-Once installed, Claude Code or Optimus will automatically recognize the skill whenever you start a coding task, or you can trigger it directly in any prompt:
+Once installed, your agent will automatically recognize the skill whenever you start a coding task, or you can trigger it directly in any prompt:
 `"Follow the vibe-coding-playbook rules for this task."`
 
 ---

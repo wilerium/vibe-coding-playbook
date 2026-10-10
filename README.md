@@ -29,14 +29,14 @@ The era of **"Vibe Coding"** has arrived: developers converse with foundation mo
 
 | Pillar | Focus | Core Philosophy |
 | :--- | :--- | :--- |
-| **[00. Attribution Tree](rules/00_attributions_and_origins.md)** | Lineage & Credit | Stand on the shoulders of giants; explicit citation of foundational ideas. |
-| **[01. Cognitive Discipline](rules/01_cognitive_discipline.md)** | Decision Frontiers | Think before coding; single-round Socratic questions with explicit recommendations. |
-| **[02. Deep Modules & Seams](rules/02_architecture_and_deep_modules.md)** | Architectural Depth | Simple interfaces, deep implementations, stateless repos, and the Deletion Test. |
-| **[03. Controlled Language & Prompts](rules/03_controlled_language_and_prompts.md)** | Precision Communication | ASD-STE100 rules, maximum prefix cache hits, and deterministic AI defensiveness. |
-| **[04. Industrial UI/UX Aesthetics](rules/04_ui_ux_information_architecture.md)** | Progressive Disclosure | Information density, zero-script interaction hacks, and Apple-grade craft. |
-| **[05. Forensic Debugging & Safety](rules/05_forensic_debugging_and_guardrails.md)** | Ironclad Guardrails | Feedback loop first, deterministic secret redaction, and destructive Git interceptors. |
-| **[06. Governance & Review](rules/06_governance_and_reviews.md)** | Two-Axis Rigor | Two-way vs One-way doors, Two-Axis Review (Standards vs Spec), and DAG Wayfinding. |
-| **[07. Master Checklist & Red Lines](rules/07_master_checklist_and_redlines.md)** | Zero Tolerance | 10 non-negotiable red lines that immediately block merge or deployment. |
+| **[00. Attribution Tree](rules/00_attributions_and_origins.md)** ([中文](rules/00_attributions_and_origins.zh.md)) | Lineage & Credit | Stand on the shoulders of giants; explicit citation of foundational ideas. |
+| **[01. Cognitive Discipline](rules/01_cognitive_discipline.md)** ([中文](rules/01_cognitive_discipline.zh.md)) | Decision Frontiers | Think before coding; single-round Socratic questions with explicit recommendations. |
+| **[02. Deep Modules & Seams](rules/02_architecture_and_deep_modules.md)** ([中文](rules/02_architecture_and_deep_modules.zh.md)) | Architectural Depth | Simple interfaces, deep implementations, stateless repos, and the Deletion Test. |
+| **[03. Controlled Language & Prompts](rules/03_controlled_language_and_prompts.md)** ([中文](rules/03_controlled_language_and_prompts.zh.md)) | Precision Communication | ASD-STE100 rules, maximum prefix cache hits, and deterministic AI defensiveness. |
+| **[04. Industrial UI/UX Aesthetics](rules/04_ui_ux_information_architecture.md)** ([中文](rules/04_ui_ux_information_architecture.zh.md)) | Progressive Disclosure | Information density, zero-script interaction hacks, and Apple-grade craft. |
+| **[05. Forensic Debugging & Safety](rules/05_forensic_debugging_and_guardrails.md)** ([中文](rules/05_forensic_debugging_and_guardrails.zh.md)) | Ironclad Guardrails | Feedback loop first, deterministic secret redaction, and destructive Git interceptors. |
+| **[06. Governance & Review](rules/06_governance_and_reviews.md)** ([中文](rules/06_governance_and_reviews.zh.md)) | Two-Axis Rigor | Two-way vs One-way doors, Two-Axis Review (Standards vs Spec), and DAG Wayfinding. |
+| **[07. Master Checklist & Red Lines](rules/07_master_checklist_and_redlines.md)** ([中文](rules/07_master_checklist_and_redlines.zh.md)) | Zero Tolerance | 10 non-negotiable red lines that immediately block merge or deployment. |
 
 ---
 
@@ -64,7 +64,7 @@ Foundational Lineage
 
 This repository is built to be loaded directly by any AI coding environment:
 
-### 1. Claude Code & Optimus
+### 1. Claude Code & Agent Skills CLI
 * **Native Agent Skill**: [SKILL.md](SKILL.md) complies with the official Anthropic Agent Skill specification.
   ```bash
   # Install as a global skill for all projects:

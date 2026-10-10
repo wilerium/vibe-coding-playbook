@@ -1,5 +1,7 @@
 # 🚨 07. Master Checklist & The Ten Red Lines
 
+**[English](07_master_checklist_and_redlines.md)** | **[简体中文](07_master_checklist_and_redlines.zh.md)**
+
 > *"Discipline equals freedom."* — Jocko Willink
 
 ---

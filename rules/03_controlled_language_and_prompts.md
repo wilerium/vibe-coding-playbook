@@ -1,5 +1,7 @@
 # ✍️ 03. Controlled Technical Language & Prompts
 
+**[English](03_controlled_language_and_prompts.md)** | **[简体中文](03_controlled_language_and_prompts.zh.md)**
+
 > *"Words are, in my not-so-humble opinion, our most inexhaustible source of magic. Capable of both inflicting injury, and remedying it."* — Albus Dumbledore
 
 ---

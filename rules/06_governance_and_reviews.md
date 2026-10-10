@@ -1,5 +1,7 @@
 # ⚖️ 06. Governance, Two-Axis Review & Wayfinding
 
+**[English](06_governance_and_reviews.md)** | **[简体中文](06_governance_and_reviews.zh.md)**
+
 > *"You can't inspect quality into a product, you have to build it in."* — W. Edwards Deming
 
 ---

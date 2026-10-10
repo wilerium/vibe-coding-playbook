@@ -1,5 +1,7 @@
 # 🌳 00. Attributions and Philosophical Lineage
 
+**[English](00_attributions_and_origins.md)** | **[简体中文](00_attributions_and_origins.zh.md)**
+
 > *"If I have seen further, it is by standing on the shoulders of giants."* — Isaac Newton
 
 The **Vibe Coding Playbook** is not an arbitrary set of rules invented in a vacuum. It represents the synthesis and distillation of decades of software engineering wisdom, combined with emerging best practices from the forefront of the generative AI and autonomous agent revolution.

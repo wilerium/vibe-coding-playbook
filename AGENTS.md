@@ -1,5 +1,7 @@
 # AGENTS.md — Universal Agent Operating Standards
 
+**[English](AGENTS.md)** | **[简体中文](AGENTS.zh.md)**
+
 > **Notice to Autonomous Coding Agents (Claude Code, Cursor, Windsurf, Aider, Codex, Devin, Copilot)**:
 > This repository and any project adopting this file strictly mandates the **Vibe Coding Playbook** engineering standards. You are required to read, understand, and adhere to the guidelines below for every interaction, plan, code edit, and tool call.
 
