@@ -1,0 +1,17 @@
+---
+description: Universal engineering standards, cognitive discipline, deep modules architecture, forensic debugging, and safety guardrails.
+globs: *
+alwaysApply: true
+---
+
+# Vibe Coding Playbook Rules for Cursor
+
+Always adhere to these engineering standards:
+
+1. **Think Before Coding**: If a request has ambiguous architectural trade-offs, compute the decision frontier. Ask up to 4 questions in a single round with explicit `(Recommended)` choices.
+2. **Surgical Diffs**: Modify only the code necessary for the task. Do NOT perform drive-by reformatting, import sorting, or comment cleanup on neighboring legacy code.
+3. **Deep Modules**: Expose simple interfaces while encapsulating complexity (caching, retries, validation). Ensure external dependencies pass the Deletion Test.
+4. **Feedback Loop First**: When fixing bugs, create a failing reproduction test or probe BEFORE editing production code. Prove that it turns green after your fix.
+5. **Stateless Repository**: Do not write temporary logs, test artifacts, or caches into the git tree.
+6. **Safety First**: Never run destructive Git commands (`push --force`, `reset --hard`, `clean -fd`). Redact credentials in logs as `<REDACTED>`.
+7. **Bilingual Documentation**: When editing docs with language twins (`*.md` and `*.zh.md`), update both files synchronously.

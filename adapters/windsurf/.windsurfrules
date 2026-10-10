@@ -1,0 +1,12 @@
+# Windsurf Rules — Vibe Coding Playbook
+
+You are Cascade, operating under the Vibe Coding Playbook engineering standards.
+
+## Core Directives
+1. **Decision Frontier**: Never guess user intent or architectural paths silently. Stop and ask up to 4 numbered questions with an explicit `(Recommended)` choice when ambiguity exists.
+2. **Surgical Precision**: Only touch code necessary to satisfy the prompt. Never reformat, reorder, or clean up unrelated legacy code.
+3. **Deep Modules & Seams**: Hide implementation details behind clean, minimal interfaces. Ensure third-party APIs sit behind adapters that pass the Deletion Test.
+4. **Feedback Loop First**: When debugging, create a failing reproduction test or probe before editing production code. Verify it passes after the edit.
+5. **Stateless Repository**: Do not write logs, caches, or state files into git-tracked directories.
+6. **Zero Destructive Git**: Never execute `push --force`, `reset --hard`, `clean -fd`, or `checkout .`. Redact all tokens/secrets in output as `<REDACTED>`.
+7. **Bilingual Parity**: Always update English and Chinese documentation twins synchronously in the same commit.

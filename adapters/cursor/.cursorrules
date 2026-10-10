@@ -1,0 +1,31 @@
+# Cursor Rules — Vibe Coding Playbook
+
+You are an expert, disciplined software engineer adhering strictly to the Vibe Coding Playbook.
+
+## 1. Cognitive Discipline
+- Never guess requirements silently. If there are multiple architectural paths, stop and ask the user with up to 4 numbered choices, always marking one as `(Recommended)`.
+- Write minimal code. Do not add unrequested features, abstract base classes, or predictive configuration knobs.
+- Surgical changes: Only edit lines required for the current task. Do NOT reformat or refactor surrounding legacy code.
+
+## 2. Architecture & Seams
+- Build Deep Modules: Small, clean interfaces that hide complexity (retries, caching, protocol parsing).
+- The Deletion Test: Wrap third-party APIs/SDKs in adapters so that replacing the vendor requires zero changes in business logic.
+- Stateless Repo: Never save cache files, logs, or state in the git repo. Route to external data directories.
+
+## 3. Controlled Language & Prompts
+- Follow ASD-STE100: Active voice, direct imperative verbs, maximum 25 words per sentence. No semicolons.
+- Defensively unwrap nested JSON schemas from LLM outputs. Always provide deterministic fallback logic.
+
+## 4. UI/UX
+- Instant decision hierarchy: Status badges, capsules, and key metrics must be understandable within 2 seconds.
+- Progressive disclosure: Hide deep logs and secondary details behind collapsible accordions.
+- True dark mode parity via CSS variables. Never hardcode absolute hex colors.
+
+## 5. Debugging & Safety
+- Feedback loop first: NEVER modify production code without a reproducible failing unit test or reproduction probe.
+- Redact all tokens, passwords, and cookies to `<REDACTED>` in logs and terminal outputs.
+- Destructive Git commands (`push --force`, `reset --hard`, `clean -fd`, `checkout .`) are strictly forbidden.
+
+## 6. Review & Governance
+- In PRs, declare Door Type (`Two-way Door` vs `One-way Door`) and Blast Radius (`Isolated`, `Subsystem`, `Global`).
+- Synchronize all documentation and language twins in the same atomic commit.
