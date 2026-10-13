@@ -25,7 +25,7 @@ The era of **"Vibe Coding"** has arrived: developers converse with foundation mo
 
 ---
 
-## 🏛️ The Seven Pillars
+## 🏛️ The Eight Pillars
 
 | Pillar | Focus | Core Philosophy |
 | :--- | :--- | :--- |
@@ -37,6 +37,7 @@ The era of **"Vibe Coding"** has arrived: developers converse with foundation mo
 | **[05. Forensic Debugging & Safety](rules/05_forensic_debugging_and_guardrails.md)** ([中文](rules/05_forensic_debugging_and_guardrails.zh.md)) | Ironclad Guardrails | Feedback loop first, deterministic secret redaction, and destructive Git interceptors. |
 | **[06. Governance & Review](rules/06_governance_and_reviews.md)** ([中文](rules/06_governance_and_reviews.zh.md)) | Two-Axis Rigor | Two-way vs One-way doors, Two-Axis Review (Standards vs Spec), and DAG Wayfinding. |
 | **[07. Master Checklist & Red Lines](rules/07_master_checklist_and_redlines.md)** ([中文](rules/07_master_checklist_and_redlines.zh.md)) | Zero Tolerance | 10 non-negotiable red lines that immediately block merge or deployment. |
+| **[08. Interaction & Motion](rules/08_interaction_and_motion.md)** ([中文](rules/08_interaction_and_motion.zh.md)) | Continuity & Timing | State continuity over hard cuts, single-expansion invariant, externalized state, navigation pixel budget, and motion parameter budgets. |
 
 ---
 
@@ -54,6 +55,8 @@ Foundational Lineage
 ├── Jeff Bezos / Amazon Leadership Principles (One-way vs Two-way doors, blast radius classification)
 ├── Kent Beck (Test-Driven Development: Feedback loop first, red-green-refactor)
 ├── Dieter Rams & Steve Jobs (Less but better, progressive disclosure, high-density craftsmanship)
+├── Apple HIG (Motion) & Material Design (Motion as spatial explanation, shared-element continuity)
+├── W3C WAI-ARIA & WCAG 2.2 (Exclusive-open disclosure, reduced motion, frame budget)
 └── Adam Wiggins et al. (The Twelve-Factor App: Externalized state, stateless repositories)
 ```
 *See [rules/00_attributions_and_origins.md](rules/00_attributions_and_origins.md) for detailed academic and engineering lineage.*

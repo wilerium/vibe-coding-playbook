@@ -41,6 +41,7 @@ When performing specific tasks in this codebase or projects governed by this pla
 - **Module Design & Refactoring**: Read `rules/02_architecture_and_deep_modules.md`
 - **Writing Prompts or Tech Specs**: Read `rules/03_controlled_language_and_prompts.md`
 - **Frontend, HTML & UI/UX**: Read `rules/04_ui_ux_information_architecture.md`
+- **Interaction States, Navigation & Motion**: Read `rules/08_interaction_and_motion.md`
 - **Debugging & Safety Guardrails**: Read `rules/05_forensic_debugging_and_guardrails.md`
 - **Pull Requests & Code Reviews**: Read `rules/06_governance_and_reviews.md`
 - **Verification & Pre-Merge Audit**: Read `rules/07_master_checklist_and_redlines.md`

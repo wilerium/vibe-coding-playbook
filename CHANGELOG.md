@@ -9,6 +9,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2026-10-13
+
+### Added
+- **Rule 08: Interaction State & Motion Engineering** (`rules/08_interaction_and_motion.md` plus the Chinese twin):
+  - Continuity over cut, the single-expansion invariant, externalized state, the navigation pixel budget, retrieval over hierarchy, and motion accessibility and performance red lines.
+  - A motion parameter quick-reference table and five framework-neutral prompt templates for AI agents.
+  - An interaction and motion checklist, plus an explicit boundary between Rule 04 and Rule 08.
+- **Attribution Update**: Registered the interaction and motion lineage in `00_attributions_and_origins` (Apple HIG, Material Design, WAI-ARIA Authoring Practices, WCAG 2.2, Nielsen Norman Group, and the command palette lineage).
+- **Index Registration**: Added Pillar 08 to `README.md`, `SKILL.md`, and the rules index in `AGENTS.md`.
+
+### Changed
+- `README.md` and `README.zh.md`: The Seven Pillars became The Eight Pillars.
+
+---
+
 ## [1.0.0] - 2026-10-10
 
 ### Added

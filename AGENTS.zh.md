@@ -41,6 +41,7 @@
 - **模块设计、接缝与解耦** ➔ 阅读 `rules/02_architecture_and_deep_modules.zh.md`
 - **提示词编写与技术规范** ➔ 阅读 `rules/03_controlled_language_and_prompts.zh.md`
 - **前端、HTML 与 UI/UX** ➔ 阅读 `rules/04_ui_ux_information_architecture.zh.md`
+- **交互状态、导航形态与动效** ➔ 阅读 `rules/08_interaction_and_motion.zh.md`
 - **问题排障与安全护栏** ➔ 阅读 `rules/05_forensic_debugging_and_guardrails.zh.md`
 - **PR 审查与大型工单寻路** ➔ 阅读 `rules/06_governance_and_reviews.zh.md`
 - **发版前核对与绝对红线** ➔ 阅读 `rules/07_master_checklist_and_redlines.zh.md`

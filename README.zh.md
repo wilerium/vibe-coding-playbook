@@ -25,7 +25,7 @@
 
 ---
 
-## 🏛️ 七大核心支柱
+## 🏛️ 八大核心支柱
 
 | 支柱规约 | 核心关注点 | 核心哲学 |
 | :--- | :--- | :--- |
@@ -37,6 +37,7 @@
 | **[05. 法医级调试与安全护栏](rules/05_forensic_debugging_and_guardrails.zh.md)** ([EN](rules/05_forensic_debugging_and_guardrails.md)) | 反馈环与破坏性拦截 | 反馈环先行（无红灯测试绝不改代码）；凭据强制脱敏；拦截破坏性 Git 操作。 |
 | **[06. 研发治理与双轨审查](rules/06_governance_and_reviews.zh.md)** ([EN](rules/06_governance_and_reviews.md)) | 单双向门与规范评审 | 单向门 vs 双向门评估；双轨代码审查（规范轴 vs 需求轴）；DAG 工单任务寻路。 |
 | **[07. 终极核对清单与十大红线](rules/07_master_checklist_and_redlines.zh.md)** ([EN](rules/07_master_checklist_and_redlines.md)) | 零容忍铁律 | 十大约束绝对红线，触犯任何一条直接阻断合入与发版。 |
+| **[08. 交互状态与动效工程](rules/08_interaction_and_motion.zh.md)** ([EN](rules/08_interaction_and_motion.md)) | 连续性与时序 | 状态位移化替代硬切；单一展开态不变量；状态外置；导航占位预算；动效参数预算。 |
 
 ---
 
@@ -54,6 +55,8 @@
 ├── Jeff Bezos / 亚马逊管理原则 (单向门与双向门决策模型、爆炸半径显式声明)
 ├── Kent Beck (测试驱动开发 TDD：反馈环先行、红绿重构周期)
 ├── 迪特·拉姆斯 (Dieter Rams) & 史蒂夫·乔布斯 (少即是多、渐进式信息披露、高密度克制美学)
+├── 苹果 HIG (Motion) & Material Design (动效说明空间关系、共享元素连续性)
+├── W3C WAI-ARIA 与 WCAG 2.2 (互斥展开契约、减弱动态效果、帧预算)
 └── Adam Wiggins 等 (The Twelve-Factor App：状态外部化、代码仓库绝对无状态)
 ```
 *详见 [rules/00_attributions_and_origins.md](rules/00_attributions_and_origins.md) 了解更详细的学术与工程溯源。*

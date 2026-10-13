@@ -23,6 +23,10 @@ Every principle in this playbook can be traced back to proven engineering litera
 | **Prompt Engineering** | **Deterministic Prefix Caching Optimization** | **Anthropic & OpenAI Research** | Discovered that freezing prompt prefixes, eliminating synonym rotation, and structuring rule dictionaries dramatically increases KV cache hit rates and cuts inference latency. |
 | **UI/UX Aesthetics** | **Progressive Disclosure** | **Jakob Nielsen & Nielsen Norman Group** | Defined progressive disclosure in interaction design: showing only the most essential data first, deferring detailed forensics behind on-demand disclosure controls. |
 | **UI/UX Aesthetics** | **Functional Minimalism & Apple HIG** | **Dieter Rams & Steve Jobs** (Braun / Apple Design) | "Less, but better" (Weniger, aber besser); typography sizing, frosted glass materials (`backdrop-filter`), tactile feedback, and asymmetric Bento Grid layouts. |
+| **Interaction & Motion** | **Continuity Over Cut & Shared-Element Transition** | **Apple Human Interface Guidelines** (Motion) & **Material Design** motion specification | Defined motion as a spatial explanation of state change: a shared indicator travels between positions, so the user keeps orientation across a switch. |
+| **Interaction & Motion** | **Single-Expansion Invariant** | **W3C WAI-ARIA Authoring Practices** (Accordion pattern) & **Nielsen Norman Group** | Formalized exclusive-open disclosure: one expanded group per level, state reported through `aria-expanded`, and the toggle reachable by keyboard. |
+| **Interaction & Motion** | **Recognition Over Recall & Retrieval Surfaces** | **Jakob Nielsen** & the command palette lineage (**Sublime Text**, **VS Code**, **Linear**) | Proved that direct retrieval beats deep hierarchy once the target set grows. Established the keyboard-first palette with local synchronous filtering. |
+| **Interaction & Motion** | **Reduced Motion & Animation Performance** | **W3C WCAG 2.2** (2.2.2, 2.3.3), **Apple Reduce Motion**, **web.dev** (rendering performance) | Required that motion stays optional and interruptible, that hot paths animate only compositor properties, and that feedback starts within 150 ms. |
 | **Debugging & Safety** | **Feedback Loop First & TDD** | **Kent Beck** (*Test-Driven Development: By Example*) | Mandated that no production code is touched without first creating a reproducible, failing red-light test loop that turns green upon fix. |
 | **Debugging & Safety** | **Forensic Triage Discipline** | **Matt Pocock** (Agent Skills: `diagnosing-bugs`) | Formalized the "never guess fixes" discipline for AI agents: isolating seams, verifying with logs, and proving root causes before patching. |
 | **Governance** | **One-way vs Two-way Door Decisions** | **Jeff Bezos** (Amazon 1997-2015 Shareholder Letters) | Established the framework for evaluating operational reversibility (Type 1 irreversible doors vs Type 2 reversible doors) and assessing blast radius. |
@@ -52,6 +56,16 @@ The Playbook expands these skills into a universal, vendor-neutral methodology t
 
 ### 4. ASD-STE100 Technical Language
 Originally created to prevent fatal maintenance errors in aviation manuals, ASD-STE100 proved to be the ultimate weapon against LLM prompt drift. By capping sentences at 25 words, banning coordinating conjunctions, and fronting imperative verbs, we eliminate model confusion and unlock near-100% prompt cache hits.
+
+### 5. Interaction and Motion Discipline
+Rule 08 consolidates interaction-state and motion engineering into a single pillar. A static screenshot cannot expose this dimension.
+- **Apple HIG (Motion)** and **Material Design** established that motion explains space. A shared indicator preserves the user's mental map across a switch.
+- **W3C WAI-ARIA Authoring Practices** defined the exclusive-open accordion contract. **Nielsen Norman Group** supplied the disclosure conventions behind the single-expansion invariant.
+- The **command palette lineage** (Sublime Text, VS Code, Linear) proved that expert users retrieve instead of navigate. **Jakob Nielsen's** recognition-over-recall principle explains why.
+- **W3C WCAG 2.2** (2.2.2, 2.3.3), **Apple Reduce Motion**, and **web.dev** set the accessibility and frame-budget floor.
+
+### Non-Foundational Inspiration
+The pattern-catalogue framing in Rule 08 was inspired by a public Chinese design explainer video ("6 Kinds of Advanced Dashboard Menus", Xiaohongshu account 叨叨 AI, 2026). Rule 08 reproduces no third-party text. Every rule is independently generalized, parameterized, and paired with framework-neutral guidance.
 
 ---
 

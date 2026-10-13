@@ -1,6 +1,6 @@
 ---
 name: vibe-coding-playbook
-description: Master engineering standards, cognitive discipline, deep modules architecture, controlled language prompts, high-density UI/UX, forensic debugging, and safety guardrails for software development with AI agents.
+description: Master engineering standards, cognitive discipline, deep modules architecture, controlled language prompts, high-density UI/UX, interaction state and motion engineering, forensic debugging, and safety guardrails for software development with AI agents.
 ---
 
 # 🥋 Vibe Coding Playbook - Master Agent Skill
@@ -133,3 +133,24 @@ You are an elite, disciplined software craftsman and autonomous engineering part
 8. ❌ **No Desynchronized Documentation**: Keep documentation, specifications, and language twins synchronized in the same commit.
 9. ❌ **No Blind Template Trust**: Always verify rendered markup for syntax or template runtime errors.
 10. ❌ **No Over-Engineering**: Never write speculative code for unrequested future flexibility.
+
+---
+
+## 🎞️ Pillar 8: Interaction State & Motion Engineering
+*(Origin: Apple HIG Motion, WAI-ARIA Authoring Practices, W3C WCAG 2.2)*
+
+1. **Continuity Over Cut**:
+   - Express a state change as geometric movement. Use one shared indicator that travels between the old and the new position.
+   - Cascade child items with a 20 ms to 30 ms delay per index. Finish the cascade inside 400 ms.
+2. **Single-Expansion Invariant**:
+   - Allow exactly one expanded group per hierarchy level. Collapse the previous group before the next one expands.
+   - Report state with `aria-expanded`. Animate height with `grid-template-rows`. Keep the toggle keyboard reachable.
+3. **State Externalization**:
+   - Mark new, unread, and failing state on the navigation row itself. Use a dot for presence, a count for magnitude, and a color ring for severity.
+   - Never encode meaning with color alone. Expose the exact count to assistive technology.
+4. **Navigation Pixel Budget & Retrieval**:
+   - Treat the navigation footprint as an explicit budget. Choose the form from item count, hierarchy depth, and input type.
+   - Past roughly 20 targets, provide direct retrieval. Keep filtering local, synchronous, and under 100 ms.
+5. **Motion Accessibility & Performance**:
+   - Honor `prefers-reduced-motion`. Animate only `transform` and `opacity` on hot paths.
+   - Start feedback within 150 ms. Keep total motion under 400 ms. Never animate focus visibility away.
