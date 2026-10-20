@@ -29,6 +29,8 @@ Every principle in this playbook can be traced back to proven engineering litera
 | **Interaction & Motion** | **Reduced Motion & Animation Performance** | **W3C WCAG 2.2** (2.2.2, 2.3.3), **Apple Reduce Motion**, **web.dev** (rendering performance) | Required that motion stays optional and interruptible, that hot paths animate only compositor properties, and that feedback starts within 150 ms. |
 | **Debugging & Safety** | **Feedback Loop First & TDD** | **Kent Beck** (*Test-Driven Development: By Example*) | Mandated that no production code is touched without first creating a reproducible, failing red-light test loop that turns green upon fix. |
 | **Debugging & Safety** | **Forensic Triage Discipline** | **Matt Pocock** (Agent Skills: `diagnosing-bugs`) | Formalized the "never guess fixes" discipline for AI agents: isolating seams, verifying with logs, and proving root causes before patching. |
+| **Rendered-UI Verification** | **The Limits of Testing** | **Edsger W. Dijkstra** | "Program testing can be used to show the presence of bugs, but never to show their absence." Rule 09's fail-closed posture follows from this asymmetry. |
+| **Rendered-UI Verification** | **Viewport, Safe-Area & Device-Independent Layout** | **W3C CSS Viewport specification**, **Apple Human Interface Guidelines** (Layout, Safe Area), **Apple Simulator documentation** | Defined the viewport meta contract, `viewport-fit=cover` and `env(safe-area-inset-*)`, and the logical-point versus native-pixel model that Rule 09 turns into an explicit measurement contract. |
 | **Governance** | **One-way vs Two-way Door Decisions** | **Jeff Bezos** (Amazon 1997-2015 Shareholder Letters) | Established the framework for evaluating operational reversibility (Type 1 irreversible doors vs Type 2 reversible doors) and assessing blast radius. |
 | **Governance** | **Two-Axis Code Review** | **Matt Pocock** (Agent Skills: `code-review`) | Split code review into orthogonal axes: Axis 1 (Engineering Standards & Safety) vs Axis 2 (Functional Specification & Completeness). |
 | **Governance** | **Initiative Wayfinding** | **Matt Pocock** (Agent Skills: `wayfinder`) | Mapped multi-session, multi-agent initiatives into Directed Acyclic Graphs (DAG) of decision tickets before writing production code. |
@@ -63,6 +65,12 @@ Rule 08 consolidates interaction-state and motion engineering into a single pill
 - **W3C WAI-ARIA Authoring Practices** defined the exclusive-open accordion contract. **Nielsen Norman Group** supplied the disclosure conventions behind the single-expansion invariant.
 - The **command palette lineage** (Sublime Text, VS Code, Linear) proved that expert users retrieve instead of navigate. **Jakob Nielsen's** recognition-over-recall principle explains why.
 - **W3C WCAG 2.2** (2.2.2, 2.3.3), **Apple Reduce Motion**, and **web.dev** set the accessibility and frame-budget floor.
+
+### 6. Rendered-UI Verification Discipline
+Rule 09 generalizes verification practice for interfaces that only exist after rendering.
+- **Edsger W. Dijkstra** supplied the epistemic floor: tests expose bugs, never their absence. A measurement that is missing is therefore a failure, not a pass.
+- **W3C CSS Viewport** work and **Apple Human Interface Guidelines** established that a layout target is meaningless without a declared viewport, scale, and safe-area inset.
+- **Platform simulator and device-tooling documentation** supplied the operational facts: local-file transports can be intercepted by file providers, and device identifiers, runtimes, and compatibility change across toolchain releases.
 
 ### Non-Foundational Inspiration
 The pattern-catalogue framing in Rule 08 was inspired by a public Chinese design explainer video ("6 Kinds of Advanced Dashboard Menus", Xiaohongshu account 叨叨 AI, 2026). Rule 08 reproduces no third-party text. Every rule is independently generalized, parameterized, and paired with framework-neutral guidance.

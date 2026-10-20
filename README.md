@@ -25,7 +25,7 @@ The era of **"Vibe Coding"** has arrived: developers converse with foundation mo
 
 ---
 
-## 🏛️ The Eight Pillars
+## 🏛️ The Nine Pillars
 
 | Pillar | Focus | Core Philosophy |
 | :--- | :--- | :--- |
@@ -38,6 +38,7 @@ The era of **"Vibe Coding"** has arrived: developers converse with foundation mo
 | **[06. Governance & Review](rules/06_governance_and_reviews.md)** ([中文](rules/06_governance_and_reviews.zh.md)) | Two-Axis Rigor | Two-way vs One-way doors, Two-Axis Review (Standards vs Spec), and DAG Wayfinding. |
 | **[07. Master Checklist & Red Lines](rules/07_master_checklist_and_redlines.md)** ([中文](rules/07_master_checklist_and_redlines.zh.md)) | Zero Tolerance | 10 non-negotiable red lines that immediately block merge or deployment. |
 | **[08. Interaction & Motion](rules/08_interaction_and_motion.md)** ([中文](rules/08_interaction_and_motion.zh.md)) | Continuity & Timing | State continuity over hard cuts, single-expansion invariant, externalized state, navigation pixel budget, and motion parameter budgets. |
+| **[09. Mobile & Rendered-UI Verification](rules/09_mobile_render_verification.md)** ([中文](rules/09_mobile_render_verification.zh.md)) | Render Is Truth | Declared viewport contracts, machine-readable measurements, transport as part of the test, idempotent fixtures, and layered verification budgets. |
 
 ---
 

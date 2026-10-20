@@ -90,6 +90,7 @@ Before opening a PR, tagging a release, or declaring a multi-step task complete,
 - [ ] Were all destructive Git commands completely avoided?
 - [ ] Are all terminal logs and error transcripts sanitized of secrets (`<REDACTED>`)?
 - [ ] Did you verify that rendered templates contain zero silent errors?
+- [ ] Does every claim about rendered layout trace back to a measurement record with a declared viewport (Rule 09)?
 
 ### Phase C: Language & Prompts (If AI-assisted)
 - [ ] Do all prompt instructions adhere to ASD-STE100 (≤ 25 words per sentence, active voice, no semicolons)?

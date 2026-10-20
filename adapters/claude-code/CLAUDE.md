@@ -24,6 +24,7 @@
 - **Authoring Prompts / Tech Summaries** ➔ Read `rules/03_controlled_language_and_prompts.md`
 - **Building UI / HTML / Dashboards** ➔ Read `rules/04_ui_ux_information_architecture.md`
 - **Interaction States / Navigation / Motion** ➔ Read `rules/08_interaction_and_motion.md`
+- **Mobile / Emulator / Rendered-UI Verification** ➔ Read `rules/09_mobile_render_verification.md`
 - **Debugging Bugs / Handling Secrets** ➔ Read `rules/05_forensic_debugging_and_guardrails.md`
 - **Pull Requests / Reviews / Planning** ➔ Read `rules/06_governance_and_reviews.md`
 - **Pre-Merge Audit / Red Lines** ➔ Read `rules/07_master_checklist_and_redlines.md`

@@ -9,6 +9,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2026-10-20
+
+### Added
+- **Rule 09: Mobile & Rendered-UI Verification** (`rules/09_mobile_render_verification.md` plus the Chinese twin):
+  - Render-is-truth mandate, declared viewport contracts, and machine-readable measurement records.
+  - Separation of browser-chrome and full-screen rendering surfaces, with safe-area detection.
+  - Transport as a test concern (ephemeral loopback HTTP instead of file URLs), idempotent fixtures, runtime-compatibility probing, blindness detection, and fail-closed behaviour.
+  - A four-level verification budget, five prompt templates, and a dedicated checklist.
+  - An explicit boundary statement against Rules 04, 05, and 07.
+
+### Changed
+- `README.md` and `README.zh.md`: The Eight Pillars became The Nine Pillars.
+- Index registration: Pillar 09 added to `README.md`, `SKILL.md`, `AGENTS.md`, and `adapters/claude-code/CLAUDE.md`.
+
+---
+
 ## [1.1.0] - 2026-10-13
 
 ### Added
