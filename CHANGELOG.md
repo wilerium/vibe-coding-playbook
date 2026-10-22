@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.4.0] - 2026-10-22
+
+### Added
+- **Automated guards for this repository** (`.github/workflows/public-safety.yml`, `scripts/`):
+  - *Public-repo red line* (`scripts/check-public-safety.sh`): blocks internal project names, real user paths, credentials, personal data roots and account handles. This repository is public, so "the red line is a matter of conscience" was not good enough — and the hazard is not hypothetical: an internal tool name reached Rule 10's body during the very session that wrote it, caught only by manual re-reading.
+  - *Bilingual parity* (`scripts/check-bilingual-parity.sh`): a `*.md` may not change without its `*.zh.md` twin. Five structural metrics (lines, `##` headings, rule clauses, table separators, checklist items) must stay equal.
+  - *Dead links* (`scripts/check-links.sh`): every relative Markdown link must resolve.
+- All three scripts are shared verbatim between local runs and CI, so green locally means green in CI. Each carries a `--selftest`.
+
+### Notes
+- **Baseline exemptions.** The bilingual check found four rule files whose two language versions already disagreed before this guard existed. Failing CI from day one would have turned the check into noise nobody reads, and a guard everyone ignores is worse than none. Those mismatches are registered in `scripts/bilingual-baseline.txt`; the check blocks only *new* mismatches, and a stale baseline entry is itself an error. The file is a list of debts to repay, not a licence.
+- One of those debts is a real defect rather than mere line-count drift: in `rules/06_governance_and_reviews.zh.md` the label "Rule 6.5" is used twice, once for twin-document synchronisation and once for the commit gate, while the English file has only the former. Fixing it requires renumbering, which ripples into references outside this repository, so it is deliberately left to its own change rather than smuggled into an infrastructure commit.
+
 ## [1.3.0] - 2026-10-21
 
 ### Added

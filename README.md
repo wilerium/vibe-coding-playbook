@@ -106,5 +106,29 @@ Before merging any PR or executing any AI-generated change, ask these four quest
 
 ---
 
+## 🛡️ Automated Guards (CI)
+
+This repository is **PUBLIC**, so "the red line is a matter of conscience" is not good enough. Three checks run automatically on every Pull Request and every push to `main`. They live in `scripts/` and are shared verbatim between local runs and CI, so *green locally means green in CI*.
+
+| Check | Script | What it blocks |
+| :--- | :--- | :--- |
+| **Public-repo red line** | `scripts/check-public-safety.sh` | Internal project names, real user paths, credentials, personal data roots, account handles |
+| **Bilingual parity** | `scripts/check-bilingual-parity.sh` | A `*.md` changed without its `*.zh.md` twin (five structural metrics must match) |
+| **Dead links** | `scripts/check-links.sh` | Relative Markdown links that no longer resolve |
+
+Run all three before pushing:
+
+```bash
+./scripts/check-public-safety.sh
+./scripts/check-bilingual-parity.sh
+./scripts/check-links.sh
+```
+
+Each script has a `--selftest` flag that proves the checker itself works.
+
+> **On baseline exemptions.** The bilingual check found four rule files whose English and Chinese versions already disagreed *before* this guard existed. Failing CI from day one would have made the check into noise nobody reads, and a guard everyone ignores is worse than none. Those pre-existing mismatches are registered explicitly in `scripts/bilingual-baseline.txt`; the check blocks only **new** mismatches, and a stale baseline entry is itself an error. **That file is a list of debts to repay, not a licence.**
+
+---
+
 ## 📄 License
 Released under the permissive [MIT License](LICENSE). Feel free to adapt, fork, and embed into your engineering teams and personal AI toolchains.

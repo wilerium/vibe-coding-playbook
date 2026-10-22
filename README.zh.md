@@ -106,5 +106,29 @@
 
 ---
 
+## 🛡️ 自动化守卫（CI）
+
+本仓库是 **PUBLIC**，所以「红线靠自觉」不够。每次 Pull Request 与每次推送到 `main` 都会自动跑三道检查。它们放在 `scripts/`，**本地与 CI 共用同一份逻辑**——本地能过就等于 CI 能过。
+
+| 检查 | 脚本 | 拦什么 |
+| :--- | :--- | :--- |
+| **公开仓库红线** | `scripts/check-public-safety.sh` | 内部项目名、真实用户路径、凭据、个人数据根、账号名 |
+| **双语结构对齐** | `scripts/check-bilingual-parity.sh` | 改了 `*.md` 却没同步 `*.zh.md`（五项结构指标必须相等） |
+| **死链** | `scripts/check-links.sh` | 已失效的相对 Markdown 链接 |
+
+推送前先自己跑一遍：
+
+```bash
+./scripts/check-public-safety.sh
+./scripts/check-bilingual-parity.sh
+./scripts/check-links.sh
+```
+
+每个脚本都有 `--selftest`，用来证明检查器本身有效。
+
+> **关于基线豁免。** 双语检查发现 4 个规则文件的中英版本在**本守卫存在之前**就已经不一致。若让 CI 一上线就全红，它会变成没人会读的噪音——而一个被人忽略的守卫比没有更糟。这些历史不一致被显式登记在 `scripts/bilingual-baseline.txt`，检查只拦**新增**不一致，且基线过期本身就会报错。**那个文件是待还的债，不是许可。**
+
+---
+
 ## 📄 开源许可证
 本工程遵循宽松的 [MIT License](LICENSE)，欢迎自由 Fork、调整并在团队中推行使用。
