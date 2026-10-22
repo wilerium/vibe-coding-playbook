@@ -9,6 +9,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.0] - 2026-10-21
+
+### Added
+- **Rule 10: Task Decomposition & Agent-Team Delegation** (`rules/10_agent_team_decomposition.md` plus the Chinese twin):
+  - A one-line decomposition verdict emitted before the first write, instead of a plan essay.
+  - The parallelizability test: five criteria that argue for a team, and three counter-criteria that force a single agent.
+  - The coordination cost gate: context rebuild, write-scope arbitration, harvest and review, and integration are named costs.
+  - Disjoint write scopes, declared as path prefixes on every task ticket, with one writer per file at a time.
+  - Independent verdicts: the writer never declares completion, and the verdict carries raw command output and an exit code.
+  - Harvest and close: every teammate and background job is collected or cancelled before the final answer, and every ticket ends in PASS, FAIL, BLOCKED, or NOT DELIVERED.
+  - An eight-row anti-pattern table, four prompt templates, and a dedicated checklist.
+  - An explicit boundary statement against Rules 01, 06, and 07.
+  - A decidable non-trivial threshold: Rule 10.1 defines it (two or more files or directories, two or more acceptance commands, two or more repositories, or writes alongside read-only research), closing the verbal-exemption gap.
+  - Priority arbitration: counter-criteria outrank criteria and act on the unit, not the request, so dependency order cannot demote a multi-deliverable request to a single agent.
+  - A mechanical check: the interface contract for a decomposition gate script (ticket array plus verdict line to exit code 0/2/3, fail-closed on malformed input), mirroring the mechanised commit gate of Rule 6.5. The contract distinguishes a **top-level area** from a **level of nesting** (a path inside a repository is still one area), states plainly that the downstream end is strong while the upstream end rests on three mechanical signals only, keeps version-control cross-checking advisory by default so the gate does not cry wolf, and concedes that an executor who declares "single agent" from the outset cannot be contradicted by any gate.
+
+### Changed
+- `README.md` and `README.zh.md`: The Nine Pillars became The Ten Pillars.
+- Index registration: Pillar 10 added to `README.md`, `SKILL.md`, `AGENTS.md`, and `adapters/claude-code/CLAUDE.md`.
+- `rules/00_attributions_and_origins.md` and its Chinese twin: registered the team-delegation lineage (Fred Brooks, Melvin Conway, the Amazon two-pizza team convention).
+
+---
+
 ## [1.2.0] - 2026-10-20
 
 ### Added
