@@ -1,0 +1,69 @@
+name: public-safety
+
+# 本仓库是 PUBLIC。这道 CI 把「红线靠自觉」变成「红叉挡住合并」。
+#
+# 检查全部由仓库内脚本执行，本地与 CI 共用同一份逻辑（本地能过 = CI 能过）：
+#   1. 公开仓库红线   scripts/check-public-safety.sh
+#   2. 双语结构对齐   scripts/check-bilingual-parity.sh
+#   3. 死链           scripts/check-links.sh
+#
+# 要让失败真正阻止合并，需在 GitHub 分支保护里把本 workflow 的三个 job
+# 勾选为 required status checks。
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  redline:
+    name: 公开仓库红线
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 需要历史以计算 base...HEAD 差异
+
+      - name: 红线扫描（本次改动）
+        run: |
+          chmod +x scripts/*.sh
+          base="${{ github.event.pull_request.base.sha || github.event.before }}"
+          if [ -z "$base" ] || ! git cat-file -e "$base^{commit}" 2>/dev/null; then
+            echo "无法确定比对基线，退化为全库扫描"
+            scripts/check-public-safety.sh
+          else
+            scripts/check-public-safety.sh --base "$base"
+          fi
+
+      - name: 红线扫描（全库兜底）
+        # 即便本次没改，也要保证整个仓库当前是干净的
+        run: scripts/check-public-safety.sh
+
+  bilingual:
+    name: 双语结构对齐
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 检查
+        run: |
+          chmod +x scripts/*.sh
+          scripts/check-bilingual-parity.sh --list
+          echo
+          scripts/check-bilingual-parity.sh
+
+  links:
+    name: 死链
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 检查
+        run: |
+          chmod +x scripts/*.sh
+          scripts/check-links.sh
