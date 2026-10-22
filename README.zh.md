@@ -25,7 +25,7 @@
 
 ---
 
-## 🏛️ 九大核心支柱
+## 🏛️ 十大核心支柱
 
 | 支柱规约 | 核心关注点 | 核心哲学 |
 | :--- | :--- | :--- |
@@ -39,6 +39,7 @@
 | **[07. 终极核对清单与十大红线](rules/07_master_checklist_and_redlines.zh.md)** ([EN](rules/07_master_checklist_and_redlines.md)) | 零容忍铁律 | 十大约束绝对红线，触犯任何一条直接阻断合入与发版。 |
 | **[08. 交互状态与动效工程](rules/08_interaction_and_motion.zh.md)** ([EN](rules/08_interaction_and_motion.md)) | 连续性与时序 | 状态位移化替代硬切；单一展开态不变量；状态外置；导航占位预算；动效参数预算。 |
 | **[09. 移动端与渲染界面验证](rules/09_mobile_render_verification.zh.md)** ([EN](rules/09_mobile_render_verification.md)) | 渲染即事实 | 视口契约；机读测量；传输方式即被测对象；夹具幂等；验证分层预算。 |
+| **[10. 任务拆解与智能体团队分派](rules/10_agent_team_decomposition.zh.md)** ([EN](rules/10_agent_team_decomposition.md)) | 协调成本经济学 | 动手前一行拆分判定；可并行性判据；协调成本闸门；写范围不相交；判官独立；答复前汇总回收。 |
 
 ---
 

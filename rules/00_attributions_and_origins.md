@@ -34,6 +34,9 @@ Every principle in this playbook can be traced back to proven engineering litera
 | **Governance** | **One-way vs Two-way Door Decisions** | **Jeff Bezos** (Amazon 1997-2015 Shareholder Letters) | Established the framework for evaluating operational reversibility (Type 1 irreversible doors vs Type 2 reversible doors) and assessing blast radius. |
 | **Governance** | **Two-Axis Code Review** | **Matt Pocock** (Agent Skills: `code-review`) | Split code review into orthogonal axes: Axis 1 (Engineering Standards & Safety) vs Axis 2 (Functional Specification & Completeness). |
 | **Governance** | **Initiative Wayfinding** | **Matt Pocock** (Agent Skills: `wayfinder`) | Mapped multi-session, multi-agent initiatives into Directed Acyclic Graphs (DAG) of decision tickets before writing production code. |
+| **Team Delegation** | **Coordination Cost & The Mythical Man-Month** | **Fred Brooks** (*The Mythical Man-Month*) | Established that adding people to a late project makes it later: communication and coordination overhead grows faster than the added capacity. Rule 10.3 turns this into a cost gate. |
+| **Team Delegation** | **Organisational Structure Mirrors System Design** | **Melvin Conway** (Conway's Law, 1968) | Observed that a system's design copies the communication structure of the organisation that built it. Rule 10.4 makes the write-scope split the visible boundary of that structure. |
+| **Team Delegation** | **Small Team Boundaries** | **Amazon** (two-pizza team convention) | Capped team size at what two pizzas can feed, to keep coordination overhead low. Rule 10.2 and Rule 10.3 apply the same reasoning to agent teams. |
 
 ---
 
@@ -71,6 +74,13 @@ Rule 09 generalizes verification practice for interfaces that only exist after r
 - **Edsger W. Dijkstra** supplied the epistemic floor: tests expose bugs, never their absence. A measurement that is missing is therefore a failure, not a pass.
 - **W3C CSS Viewport** work and **Apple Human Interface Guidelines** established that a layout target is meaningless without a declared viewport, scale, and safe-area inset.
 - **Platform simulator and device-tooling documentation** supplied the operational facts: local-file transports can be intercepted by file providers, and device identifiers, runtimes, and compatibility change across toolchain releases.
+
+### 7. Task Decomposition and Agent-Team Delegation
+Rule 10 treats delegation as an engineering decision with a measurable cost, not as a display of capability.
+- **Fred Brooks** supplied the arithmetic: coordination overhead grows faster than headcount, so adding people to a late project makes it later. Rule 10.3 converts that into an explicit gate.
+- **Melvin Conway** supplied the structural insight: the system's design copies the organisation's communication structure. Rule 10.4 makes the write-scope boundary the place where that structure becomes visible and enforceable.
+- **Amazon's two-pizza team convention** supplied the sizing heuristic: keep the unit small enough that coordination stays cheap. Rules 10.2 and 10.3 apply the same ceiling to agent teams.
+- The **independent-verdict and harvest discipline** (Rules 10.5 and 10.6) generalizes standard review practice: the author never signs off, and no dispatched unit is left without a conclusion.
 
 ### Non-Foundational Inspiration
 The pattern-catalogue framing in Rule 08 was inspired by a public Chinese design explainer video ("6 Kinds of Advanced Dashboard Menus", Xiaohongshu account 叨叨 AI, 2026). Rule 08 reproduces no third-party text. Every rule is independently generalized, parameterized, and paired with framework-neutral guidance.
