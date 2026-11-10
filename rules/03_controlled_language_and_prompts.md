@@ -89,6 +89,42 @@ When prompting foundation models or writing agent system instructions, teams fre
 
 ---
 
+## 📜 Rule 3.4: The Two-Surface House Style & 5-Slot Fixed Report Format
+*(Attribution: Spec-Driven Autonomous Agent Engineering)*
+
+**Core Mandate**: Text flowing through an AI agent serves two completely different consumers. Never blend one paragraph for both.
+
+### 1. The Two Registers
+1. **The Documentation Register (Durable Artifacts)**:
+   - Applies to specs, ADRs, READMEs, PR summaries, and commit messages.
+   - Follows ASD-STE100: complete sentences, active voice, present tense, one idea per sentence.
+   - **Clarity wins over token counts**: Durable documentation is never truncated or compressed to save tokens.
+2. **The Ephemeral Register (Turn-by-Turn Output)**:
+   - Applies to agent logs, tool outputs, and assistant messages.
+   - Strictly bifurcates into two distinct surfaces based on the reader.
+
+### 2. Machine Surface vs Human Surface
+* **The Agent Surface (Machine-Facing)**:
+  - *Reader*: An LLM.
+  - *Goal*: Absolute token minimization with 100% functional clarity.
+  - *Format*: May drop articles, use terse key-value fragments, and omit polite filler.
+* **The Human Surface (Human-Facing)**:
+  - *Reader*: An engineer under time pressure.
+  - *Goal*: Zero AI fluff, immediate executive comprehension, no searching for key facts.
+  - *Fixed 5-Slot Order*: All human-facing progress reports must strictly follow these five slots in exact sequence:
+    1. **State Change**: What is now true that was not true before? Must cite verifiable identifiers (Issue #, PR URL, Commit SHA, Branch name).
+    2. **Decisions & Risks Owned by Human**: Open trade-offs requiring human sign-off and their explicit blast radius.
+    3. **Supporting Detail**: Exact files modified and proof of verification.
+    4. **Process Narration**: What the agent attempted or struggled with. **Strictly capped at ≤ 1 sentence**. Process narration must never lead.
+    5. **Next Actions**: The exact terminal commands for the human to run next as an imperative bullet list (≤ 4 items). If no action is required, output the literal line: `No next action.`
+
+### 3. The Non-Negotiable Correctness Floor
+No matter how aggressively text is compressed to save tokens:
+* **Never drop a negation or limiter**: Words like `not`, `never`, `no`, `only`, `except` must remain intact. Flipping a warning's meaning is a fatal defect.
+* **Keep numbers, units, code, and error strings verbatim**: Never paraphrase code syntax, terminal flags, or stack traces.
+
+---
+
 ## 🚨 Controlled Language & Prompt Checklist
 
 - [ ] Are all instruction sentences capped at ≤ 25 words (English) or ≤ 30 characters (Chinese)?
@@ -96,5 +132,8 @@ When prompting foundation models or writing agent system instructions, teams fre
 - [ ] Are semicolons and conversational fluff completely eliminated?
 - [ ] Is the prompt prefix frozen and deterministic to maximize cache hits?
 - [ ] Are dynamic variables isolated to the tail of the prompt?
+- [ ] Do human-facing reports strictly follow the Fixed 5-Slot Order with process narration ≤ 1 sentence?
+- [ ] Does the Next Actions slot provide exact copy-pasteable commands or literal `No next action.`?
+- [ ] Are negations (`not`, `never`, `only`) strictly preserved across all compression?
 - [ ] Are critical classifications protected by deterministic regex/dictionary overrides?
 - [ ] Is the parser defensively unwrapping nested JSON envelopes and markdown backticks?

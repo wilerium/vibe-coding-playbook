@@ -121,10 +121,57 @@ fi
 
 ---
 
+## 📜 Rule 5.5: Maker-Checker Role Isolation & The Tracer Bullet Contract
+*(Attribution: Spec-Driven Autonomous Agent Engineering & Andrew Hunt / David Thomas)*
+
+**Core Mandate**: The entity that writes code must never grade its own work. Mechanical execution and semantic judgment must be strictly partitioned across isolated agent roles.
+
+```
+       ┌────────────────────────────────────────────────────────┐
+       │                Developer Agent (Write)                 │
+       │                Implements code, commits ≤ 2            │
+       └───────────────────────────┬────────────────────────────┘
+                                   │ Outputs patch & handoff
+                                   ▼
+       ┌────────────────────────────────────────────────────────┐
+       │                  MAKER-CHECKER SEPARATION              │
+       ├───────────────────────────┬────────────────────────────┤
+       │ Verify (Mechanical Gate)  │  Judge (Semantic Gate)     │
+       │ - Tool: Shell/Bash ONLY   │  - Tool: Read/Grep ONLY    │
+       │ - Zero file edit tools    │  - Zero shell execution    │
+       │ - Reports raw exit codes  │  - 3-Axis Audit:           │
+       │ - Baseline-aware diff     │    1. Standards Axis       │
+       │ - Re-runs Tracer Bullet   │    2. Spec Axis (Blocking) │
+       │                           │    3. Parent Axis (Advisor)│
+       └───────────────────────────┴────────────────────────────┘
+```
+
+### 1. Mechanical Gate vs Semantic Gate
+* **The Verify Agent (Mechanical Gate)**:
+  - *Tooling*: Shell execution only. Strictly forbidden from using write or edit tools.
+  - *Mandate*: Independently materialize the patch, execute project test commands, and inspect raw exit codes. Never accept the Developer agent's self-reported success.
+  - *Baseline-Aware Diff*: Runs checks against both the working tree and the `merge-base` baseline. Failures that were already broken on the base branch are tolerated; only newly introduced breakages block progress.
+* **The Judge Agent (Semantic Gate)**:
+  - *Tooling*: Read-only tools (Read, Grep, Glob) only. Strictly forbidden from executing shell commands.
+  - *Mandate*: Audit the patch line-by-line against the written work order across 3 orthogonal axes:
+    1. **Standards Axis**: Adherence to codebase architectural rules, deep modules, and security standards.
+    2. **Spec Axis**: Verification that every acceptance criterion is satisfied. Unmet criteria are filed as **Blocking Findings** (must be fixed before landing).
+    3. **Parent Axis**: Consistency with overarching project goals. Inconsistencies are filed as **Advisory Findings** (informative only; the fix agent cannot unilaterally expand scope).
+
+### 2. The Tracer Bullet Contract & Red-Before-Green
+* **One Tracer Bullet Per Slice**: Every vertical slice must declare exactly one end-to-end test that cuts through all layers to prove the slice functions.
+* **Mandatory Red-Before-Green Declaration**: The work order must state in plain text what the failure looks like *before* the code is written (e.g., exact expected error string or exit status).
+* Verify must observe this expected failure before green-lighting the completed implementation.
+
+---
+
 ## 🚨 Forensic Debugging & Safety Checklist
 
 - [ ] Was a reproducible failing test/probe created BEFORE modifying production code?
 - [ ] Did you observe the test fail (Red) and then verify it passes (Green) after the fix?
+- [ ] Is the Maker-Checker boundary preserved (verifying agent is distinct from implementing agent)?
+- [ ] Is mechanical verification (Bash/exit codes) separated from semantic judgment (Read-only/3-axis audit)?
+- [ ] Does each vertical slice include an end-to-end Tracer Bullet with an explicit Red-before-green contract?
 - [ ] Were all credentials, tokens, and cookies verified to be redacted (`<REDACTED>`) in logs?
 - [ ] Did you avoid all destructive Git commands (`push --force`, `reset --hard`, `clean -fd`)?
 - [ ] Do CLI setup wizards use silent input for secrets and idempotent writes?

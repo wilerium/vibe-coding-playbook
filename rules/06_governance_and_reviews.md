@@ -131,6 +131,62 @@ Decision Ticket DAG Example:
 
 ---
 
+## 📜 Rule 6.6: Asymmetric Git Topology & Sovereign Human Gate
+*(Attribution: Spec-Driven Autonomous Agent Engineering)*
+
+**Core Mandate**: Machine and human commit permissions are strictly asymmetric. Autonomous agents may merge unattended solely within ephemeral feature branches; the default branch belongs exclusively to sovereign human review.
+
+```
+main (Default Branch) ───────────────────────────────● [Human Manual Merge Only]
+                                                    ▲
+                                                    │ Terminal PR (Human Review Gate)
+feat/<parent>-<slug> ──────●────────────●───────────┴───────────────────────────
+                          ▲            ▲
+     [Unattended Merge]  │            │  [Unattended Merge]
+slice-1 ─────────────────┘            │
+slice-2 ──────────────────────────────┘
+```
+
+### 1. The Landing Topologies
+* **Multi-Slice Feature Branch**:
+  - Slice branches (`slice-1`, `slice-2`) are cut from `feat/<parent>-<slug>`.
+  - Once verified and judged, slice branches are automatically squash-merged into the feature branch with zero human intervention.
+* **Terminal PR to Default Branch**:
+  - Once all slices land, the controller opens the terminal PR from `feat/<parent>-<slug>` to `main` and immediately pauses.
+  - **The controller is physically incapable of merging to the default branch.** A human must inspect the full diff, review CI, and merge manually.
+
+### 2. Fail-Closed Merge Guard Hook
+* Install a tool-execution guardrail intercepting `gh pr merge` / git merge calls.
+* **Fail-Closed Rule**: Any automated attempt to merge into the repository's default branch is rejected outright.
+* **Base Sync Requirement**: If the feature branch trails the default branch (`Behind main by N commits`), automated landing is blocked until a fast-forward base sync is confirmed, preventing regression clobbering.
+
+---
+
+## 📜 Rule 6.7: Single Source of Truth & The Typed Reason Ledger
+*(Attribution: Spec-Driven Autonomous Agent Engineering)*
+
+**Core Mandate**: Never keep orchestration state in private local files. Rely on external trackers as the single source of truth, and report all failures through a typed reason ledger.
+
+### 1. External Single Source of Truth (SSOT)
+* **No Private State Databases**: Never store pipeline progress in hidden local JSON, SQLite, or scratch directories.
+* **Git & Issue Tracker as Sole Carriers**:
+  - Parent issue = Specifications, architectural decisions, and DAG checklist.
+  - Slice issues = Work orders, tracer bullet definitions, and `## Blocked by` dependency edges.
+  - Git branch = The physical artifact.
+* Any clean terminal session can 100% reconstruct the exact frontier and resume execution using only `git status` and issue tracker queries.
+
+### 2. The Four-Tier Typed Reason Ledger
+When an autonomous pipeline halts, it is strictly forbidden from emitting a generic "Execution Failed" error. It must persist a typed reason belonging to one of four actionable response classes:
+
+| Class | Meaning | Required Human Response |
+| :--- | :--- | :--- |
+| **`environment`** | External failure (dirty git tree, lock contention, network timeout, transient API error). | Clear external state (clean working tree, release lock); re-dispatch directly without modifying code or spec. |
+| **`spec`** | Defect in work order (dependency cycle, invalid acceptance criteria, premise drift). | Edit and amend the issue specification before re-dispatching; never retry code blindly. |
+| **`defect`** | Code defect (tracer bullet failed, checks red after max 2 fix rounds). | Inspect the git diff and manually resolve the defect; automated fix budget is exhausted. |
+| **`policy`** | Safety rule triggered (merge guard blocked default branch merge, classifier refusal). | A human must explicitly review and execute the sensitive operation manually. |
+
+---
+
 ## 🚨 Governance Checklist
 
 - [ ] Does the PR explicitly state its Door Type (One-way vs Two-way) and Blast Radius?
@@ -138,4 +194,7 @@ Decision Ticket DAG Example:
 - [ ] Has the review evaluated both Axis 1 (Standards) and Axis 2 (Functional Spec)?
 - [ ] Are multi-session initiatives mapped into a DAG of decision tickets before coding?
 - [ ] Are all documentation twins updated synchronously in the same commit?
+- [ ] Is the default branch strictly protected by a sovereign human review gate and fail-closed merge guard?
+- [ ] Is state externalized to Git/issues rather than hidden local state files?
+- [ ] Are pipeline failures classified under the Four-Tier Typed Reason Ledger?
 - [ ] Is an explicit rollback plan defined for any One-way Door changes?

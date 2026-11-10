@@ -16,6 +16,8 @@ Every principle in this playbook can be traced back to proven engineering litera
 | :--- | :--- | :--- | :--- |
 | **Cognitive Discipline** | **LLM Programming Pitfalls & Guidelines** | **Andrej Karpathy** (OpenAI / Tesla / Stanford) | Coined the "Think before coding", "Surgical changes", and "Simplicity first" tenets for AI-assisted programming. Warned against silent guesswork and code bloat. |
 | **Cognitive Discipline** | **Decision Frontier Socratic Interrogation** | **Matt Pocock** (Agent Skills: `grilling` / `grill-me`) | Pioneered the mathematical decision tree frontier concept for AI agents: identifying prerequisite nodes, batching inquiries, and providing single-choice recommendations for human sign-off. |
+| **Cognitive Discipline** | **The Anti-Dumb-Zone Protocol** | **Spec-Driven Agent Engineering** | Formalized the context degradation theorem: as context fills past operational thresholds (150K tokens), reasoning degrades exponentially. Mandated physical Session Breaks between planning and implementation, strict sentence budgets, and proactive split gates. |
+| **Architecture** | **Seams & Enabling Points** | **Michael Feathers** (*Working Effectively with Legacy Code*) | Formally defined architectural seams and enabling points: a place where behavior can alter without editing in place. Established the Two-Adapter rule (one is imaginary; two proves real) and functional core decoupling. |
 | **Architecture** | **Deep Modules & Information Hiding** | **John Ousterhout** (*A Philosophy of Software Design*) | Formalized the definition of Deep vs Shallow modules: maximizing the ratio of hidden implementation complexity over interface surface. Conceived the concept of architectural seams. |
 | **Architecture** | **The Deletion Test & Adapter Seams** | **Martin Fowler & Eric Evans** (*Refactoring*, *Domain-Driven Design*) | Established hexagonal architecture, bounded contexts, and adapter patterns that ensure external dependencies can be deleted without affecting business cores. |
 | **Architecture** | **Stateless Engine & Externalized State** | **Adam Wiggins et al.** (*The Twelve-Factor App*) | Enforced the separation of stateless codebase from stateful backing stores, externalizing user data and logs to prevent repo pollution. |
@@ -28,9 +30,13 @@ Every principle in this playbook can be traced back to proven engineering litera
 | **Interaction & Motion** | **Recognition Over Recall & Retrieval Surfaces** | **Jakob Nielsen** & the command palette lineage (**Sublime Text**, **VS Code**, **Linear**) | Proved that direct retrieval beats deep hierarchy once the target set grows. Established the keyboard-first palette with local synchronous filtering. |
 | **Interaction & Motion** | **Reduced Motion & Animation Performance** | **W3C WCAG 2.2** (2.2.2, 2.3.3), **Apple Reduce Motion**, **web.dev** (rendering performance) | Required that motion stays optional and interruptible, that hot paths animate only compositor properties, and that feedback starts within 150 ms. |
 | **Debugging & Safety** | **Feedback Loop First & TDD** | **Kent Beck** (*Test-Driven Development: By Example*) | Mandated that no production code is touched without first creating a reproducible, failing red-light test loop that turns green upon fix. |
+| **Debugging & Safety** | **Tracer Bullets & Red-Before-Green** | **Andrew Hunt & David Thomas** (*The Pragmatic Programmer*) | Defined Tracer Bullets as narrow, end-to-end paths through every architectural layer. Enforced explicit Red-before-green verification contracts before implementation. |
 | **Debugging & Safety** | **Forensic Triage Discipline** | **Matt Pocock** (Agent Skills: `diagnosing-bugs`) | Formalized the "never guess fixes" discipline for AI agents: isolating seams, verifying with logs, and proving root causes before patching. |
 | **Rendered-UI Verification** | **The Limits of Testing** | **Edsger W. Dijkstra** | "Program testing can be used to show the presence of bugs, but never to show their absence." Rule 09's fail-closed posture follows from this asymmetry. |
 | **Rendered-UI Verification** | **Viewport, Safe-Area & Device-Independent Layout** | **W3C CSS Viewport specification**, **Apple Human Interface Guidelines** (Layout, Safe Area), **Apple Simulator documentation** | Defined the viewport meta contract, `viewport-fit=cover` and `env(safe-area-inset-*)`, and the logical-point versus native-pixel model that Rule 09 turns into an explicit measurement contract. |
+| **Governance** | **Asymmetric Git Topology & Merge Guard** | **Spec-Driven Agent Engineering** | Enforced sovereign human control over default branches via fail-closed merge guards, allowing unattended squash-merges solely inside ephemeral feature branches. |
+| **Governance** | **Typed Reason Ledger & SSOT** | **Spec-Driven Agent Engineering** | Replaced unstructured AI crashes with a 4-tier typed reason ledger (`environment`, `spec`, `defect`, `policy`) and anchored state exclusively in Git and issue trackers. |
+| **Governance** | **Adaptive PDCA Outcome Loop** | **W. Edwards Deming** (Total Quality Management) | Applied closed-loop Deming cycles to AI pipelines: empirical results from landed slices generate bounded amendments to open downstream tasks. |
 | **Governance** | **One-way vs Two-way Door Decisions** | **Jeff Bezos** (Amazon 1997-2015 Shareholder Letters) | Established the framework for evaluating operational reversibility (Type 1 irreversible doors vs Type 2 reversible doors) and assessing blast radius. |
 | **Governance** | **Two-Axis Code Review** | **Matt Pocock** (Agent Skills: `code-review`) | Split code review into orthogonal axes: Axis 1 (Engineering Standards & Safety) vs Axis 2 (Functional Specification & Completeness). |
 | **Governance** | **Initiative Wayfinding** | **Matt Pocock** (Agent Skills: `wayfinder`) | Mapped multi-session, multi-agent initiatives into Directed Acyclic Graphs (DAG) of decision tickets before writing production code. |
@@ -62,25 +68,19 @@ The Playbook expands these skills into a universal, vendor-neutral methodology t
 ### 4. ASD-STE100 Technical Language
 Originally created to prevent fatal maintenance errors in aviation manuals, ASD-STE100 proved to be the ultimate weapon against LLM prompt drift. By capping sentences at 25 words, banning coordinating conjunctions, and fronting imperative verbs, we eliminate model confusion and unlock near-100% prompt cache hits.
 
-### 5. Interaction and Motion Discipline
-Rule 08 consolidates interaction-state and motion engineering into a single pillar. A static screenshot cannot expose this dimension.
-- **Apple HIG (Motion)** and **Material Design** established that motion explains space. A shared indicator preserves the user's mental map across a switch.
-- **W3C WAI-ARIA Authoring Practices** defined the exclusive-open accordion contract. **Nielsen Norman Group** supplied the disclosure conventions behind the single-expansion invariant.
-- The **command palette lineage** (Sublime Text, VS Code, Linear) proved that expert users retrieve instead of navigate. **Jakob Nielsen's** recognition-over-recall principle explains why.
-- **W3C WCAG 2.2** (2.2.2, 2.3.3), **Apple Reduce Motion**, and **web.dev** set the accessibility and frame-budget floor.
-
-### 6. Rendered-UI Verification Discipline
-Rule 09 generalizes verification practice for interfaces that only exist after rendering.
-- **Edsger W. Dijkstra** supplied the epistemic floor: tests expose bugs, never their absence. A measurement that is missing is therefore a failure, not a pass.
-- **W3C CSS Viewport** work and **Apple Human Interface Guidelines** established that a layout target is meaningless without a declared viewport, scale, and safe-area inset.
-- **Platform simulator and device-tooling documentation** supplied the operational facts: local-file transports can be intercepted by file providers, and device identifiers, runtimes, and compatibility change across toolchain releases.
-
 ### 7. Task Decomposition and Agent-Team Delegation
 Rule 10 treats delegation as an engineering decision with a measurable cost, not as a display of capability.
 - **Fred Brooks** supplied the arithmetic: coordination overhead grows faster than headcount, so adding people to a late project makes it later. Rule 10.3 converts that into an explicit gate.
 - **Melvin Conway** supplied the structural insight: the system's design copies the organisation's communication structure. Rule 10.4 makes the write-scope boundary the place where that structure becomes visible and enforceable.
 - **Amazon's two-pizza team convention** supplied the sizing heuristic: keep the unit small enough that coordination stays cheap. Rules 10.2 and 10.3 apply the same ceiling to agent teams.
 - The **independent-verdict and harvest discipline** (Rules 10.5 and 10.6) generalizes standard review practice: the author never signs off, and no dispatched unit is left without a conclusion.
+
+### 8. Spec-Driven Pipeline & Anti-Dumb-Zone Engineering
+As coding agents evolved from short script generators into long-horizon autonomous systems, empirical telemetry revealed that models enter an exponential reasoning degradation regime as context fills ("The Dumb Zone"). Industrial pipelines solved this through:
+- **Physical Session Breaks**: Decoupling the high-context planning phase from execution so implementation agents always start with a clean, low-token slate.
+- **Strict Separation of Verification and Judgment**: Enforcing that the Maker (code author) never serves as the Checker, and mechanically splitting physical command execution (Verify) from semantic contract auditing (Judge).
+- **Asymmetric Git Topologies**: Granting agents unattended squash-merge privileges only within feature branches, while strictly reserving default branch merges for sovereign human review.
+- **Deterministic State Machines**: Driving all control loops, timeout bounds, and retry caps in deterministic code rather than trusting an LLM's conversational memory.
 
 ### Non-Foundational Inspiration
 The pattern-catalogue framing in Rule 08 was inspired by a public Chinese design explainer video ("6 Kinds of Advanced Dashboard Menus", Xiaohongshu account 叨叨 AI, 2026). Rule 08 reproduces no third-party text. Every rule is independently generalized, parameterized, and paired with framework-neutral guidance.
