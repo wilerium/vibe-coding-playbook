@@ -30,6 +30,12 @@
    - NEVER print or log credentials, Bearer tokens, cookies, or secrets in terminal output or commit history. Redact sensitive values with `<REDACTED>`.
 7. **Documentation Twin Synchronization**:
    - Whenever modifying user-facing documentation, specifications, or guides that have dual-language versions (`*.md` and `*.zh.md`), you MUST update both files synchronously in the same commit.
+8. **Anti-Dumb-Zone & Role Isolation**:
+   - Enforce strict context hygiene: trigger physical Session Breaks (`/clear`) between planning and implementation to stay out of the reasoning degradation regime.
+   - Separate Maker from Checker: an agent that implements code must never judge its own patch. Split mechanical command execution (Verify) from semantic contract review (Judge).
+9. **Sovereign Default Branch & External SSOT**:
+   - The default branch is sovereign and reserved for human review; never merge automated changes directly into `main`.
+   - Anchor all task and orchestration state in Git and external issue trackers, never in hidden local state files.
 
 ---
 

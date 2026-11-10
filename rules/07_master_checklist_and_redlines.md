@@ -79,6 +79,8 @@ Before opening a PR, tagging a release, or declaring a multi-step task complete,
 
 ### Phase A: Architecture & Code Quality
 - [ ] Is every module deep (small interface, encapsulated complexity)?
+- [ ] Are all seams justified by the Two-Adapter Law (no single-implementation speculative interfaces)?
+- [ ] Were pure decisions untangled from I/O effects before reaching for dependency injection?
 - [ ] Does every external dependency sit behind an adapter passing the Deletion Test?
 - [ ] Is the codebase strictly stateless with externalized data roots?
 - [ ] Is the diff surgical with zero drive-by reformatting?
@@ -86,6 +88,8 @@ Before opening a PR, tagging a release, or declaring a multi-step task complete,
 
 ### Phase B: Verification & Safety
 - [ ] Did you create a reproducible test before fixing any bug?
+- [ ] Was Maker-Checker role separation strictly enforced (verifier distinct from coder; mechanical shell verification separated from semantic read-only review)?
+- [ ] Does each vertical slice include an end-to-end Tracer Bullet with an explicit Red-before-green contract verified?
 - [ ] Are all unit tests, integration tests, and linters passing (100% green)?
 - [ ] Were all destructive Git commands completely avoided?
 - [ ] Are all terminal logs and error transcripts sanitized of secrets (`<REDACTED>`)?
@@ -94,12 +98,17 @@ Before opening a PR, tagging a release, or declaring a multi-step task complete,
 
 ### Phase C: Language & Prompts (If AI-assisted)
 - [ ] Do all prompt instructions adhere to ASD-STE100 (≤ 25 words per sentence, active voice, no semicolons)?
+- [ ] Did the workflow enforce a physical Session Break (`/clear`) between planning and implementation to prevent the "Dumb Zone"?
+- [ ] Do human-facing progress reports follow the Fixed 5-Slot Order with process narration ≤ 1 sentence?
 - [ ] Are static prompt prefixes frozen to maximize KV-cache hit rates?
 - [ ] Are schema parsers defensively unwrapping nested JSON envelopes?
 - [ ] Are critical classifications backed by deterministic regex / dictionary rules?
 
 ### Phase D: Governance & Documentation
 - [ ] Does the PR description declare Door Type (One-way vs Two-way) and Blast Radius?
+- [ ] Is the default branch strictly protected by sovereign human review (zero autonomous auto-merges to main)?
+- [ ] Is state externalized to Git/issues rather than hidden local state files?
+- [ ] Are pipeline failures classified under the Four-Tier Typed Reason Ledger?
 - [ ] Does the PR include explicit Before and After verification evidence?
 - [ ] Are documentation twins (`*.md` and `*.zh.md`) synchronously updated?
 - [ ] Were tricky bug fixes or new architectural patterns recorded in lessons learned?

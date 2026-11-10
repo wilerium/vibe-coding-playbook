@@ -112,11 +112,41 @@ Reply 'Yes' to proceed with the recommendation, or specify your preferred option
 
 ---
 
+## 📜 Rule 1.5: The Anti-Dumb-Zone Protocol (Context Degradation Defense)
+*(Attribution: Spec-Driven Autonomous Agent Engineering)*
+
+**Core Mandate**: Prevent LLMs from operating inside the "Dumb Zone"—the regime where accumulated conversation context causes catastrophic reasoning decay, instruction loss, and code bloat.
+
+### 1. The Context Degradation Reality
+* **Empirical Fact**: As context windows fill up, model reasoning quality decays exponentially. In telemetry across hundreds of autonomous runs, sessions attempting both planning and implementation peaked at a **121K median—a 44K token gap above the 77K median for implementation-only sessions**.
+* **The Rule**: Heavy exploratory planning and code synthesis must never share the same active context window.
+
+### 2. Mandatory Planning-Implementation Session Break
+* When charting, grilling, and specification phases are complete and tasks are published, **immediately halt and break the session** (`/clear`).
+* Resume implementation in a fresh, low-token session referencing only the external ticket ID. Never slide directly from high-token brainstorming into code generation.
+
+### 3. Vertical Slicing & The 80-Sentence Budget
+* **Vertical Slices**: Decompose features into narrow, complete paths through all architectural layers rather than horizontal technical tiers.
+* **Strict Sentence Budget**: Work orders and slice descriptions must be strictly capped at **≤ 80 sentences**. Detailed deliberations belong in archived planning documents, not in the execution context.
+
+### 4. Proactive Split Gate (Pre-Implementation Interception)
+* Before writing code, estimate the context footprint:
+  $$\text{High Risk Trigger} = (\text{Files to touch} \ge 10) \lor (\text{Context size} \ge 110\text{ KiB})$$
+* Any slice flagged as High Risk must be decomposed into smaller sub-slices **before** invoking implementation agents, avoiding wasted tokens on doomed runs.
+
+### 5. 150K Token Hard Ceiling Warning
+* Maintain an absolute ceiling threshold at **150,000 tokens**.
+* If a session accumulates 150,000 tokens, it must halt, persist its current state to an external tracker ticket, and hand off to a fresh session rather than continuing to accumulate context.
+
+---
+
 ## 🚨 Cognitive Discipline Checklist
 
 - [ ] Was the decision frontier computed before choosing between non-trivial architectures?
 - [ ] Were inquiries batched in a single turn with explicit recommendations?
 - [ ] Can every single line in the diff be traced back to the user's objective?
 - [ ] Was unsolicited refactoring or reformatting of neighboring code completely avoided?
+- [ ] Did you enforce a physical Session Break (`/clear`) between planning and implementation?
+- [ ] Are task work orders bounded within the 80-sentence budget and free of context bloat?
 - [ ] Is the solution implemented with minimal lines without premature abstractions?
 - [ ] Did you clean up all temporary test files, debug logs, and exploratory artifacts?

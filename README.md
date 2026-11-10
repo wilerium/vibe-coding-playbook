@@ -50,10 +50,14 @@ This playbook synthesizes battle-tested philosophies from pioneering engineers a
 ```text
 Foundational Lineage
 ├── Andrej Karpathy (Core LLM behavioral guidelines: Think first, surgical changes, simplicity)
-├── John Ousterhout ("A Philosophy of Software Design": Deep modules, information hiding, seams)
+├── John Ousterhout ("A Philosophy of Software Design": Deep modules, information hiding)
+├── Michael Feathers ("Working Effectively with Legacy Code": Seams & enabling points)
+├── Andrew Hunt & David Thomas ("The Pragmatic Programmer": Tracer bullets, red-before-green)
 ├── Matt Pocock (Agent skills: Grilling decision frontiers, diagnosing bugs, two-axis code review, wayfinder)
+├── Spec-Driven Agent Engineering (Anti-dumb-zone protocol, session breaks, maker-checker isolation, asymmetric git)
 ├── ASD-STE100 European Aerospace Standard (Simplified Technical English, constrained vocabulary)
 ├── Martin Fowler & Eric Evans (Refactoring, Domain-Driven Design, clean adapter boundaries)
+├── W. Edwards Deming (PDCA cycle: Continuous empirical outcome amendments)
 ├── Jeff Bezos / Amazon Leadership Principles (One-way vs Two-way doors, blast radius classification)
 ├── Kent Beck (Test-Driven Development: Feedback loop first, red-green-refactor)
 ├── Dieter Rams & Steve Jobs (Less but better, progressive disclosure, high-density craftsmanship)
@@ -103,6 +107,8 @@ Before merging any PR or executing any AI-generated change, ask these four quest
 2. **[Surgical]** Does this diff contain any unsolicited reformatting or cleanup of neighboring old code?
 3. **[Loop]** Was a failing reproduction test or verification probe established before editing production logic?
 4. **[Seam]** If this external API or vendor is deleted tomorrow, does the caller code need to change? (The Deletion Test)
+5. **[Anti-Dumb-Zone]** Did the agent enforce a physical session break (`/clear`) between planning and implementation?
+6. **[Sovereign Gate]** Is the default branch protected from automated merges by human review?
 
 ---
 
